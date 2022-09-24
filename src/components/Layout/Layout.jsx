@@ -1,3 +1,7 @@
+import { AppBar } from "components/AppBar/AppBar"
+
 export const Layout = () => {
-    return <header>Header</header>
+    return <>
+    <AppBar/>
+    <main>Content</main></>
 }
