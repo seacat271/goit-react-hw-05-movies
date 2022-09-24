@@ -1,6 +1,9 @@
 // import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./Layout/Layout";
+import { Home } from "components/Home/Home"
+import { Movies } from "./Movies/Movies";
+import { MovieDetails } from "./MovieDetails/MovieDetails";
 
 export const App =  () => {
  
@@ -8,8 +11,13 @@ export const App =  () => {
     <div>
 <Routes>
   <Route path="/" element={<Layout/>}>
-    <Route path="home" element={<div>Home</div>}/>
-    <Route path="movies" element={<div>Movies</div>}/>
+    <Route path="/" element={<Home/>}/>
+    <Route path="movies" element={<Movies/>}>
+      <Route path=":movieId" element={<MovieDetails/>}>
+        <Route path="cast" element={<div>Cast</div>}/>
+        <Route path="reviews" element={<div>Reviews</div>}/>
+      </Route>
+    </Route>
   </Route>
 </Routes>
 </div>

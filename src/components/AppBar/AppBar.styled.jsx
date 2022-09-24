@@ -15,16 +15,17 @@ text-align: center;
 padding: 10px;
 &:not(:last-child) {
     margin-right: 30px;
-}
+};
+
 &.active{
 color: white;
 background-color: black;
-}
+};
 
 &:hover:not(.active),
 &:focus-visible:not(.active){
     color: white;
     background-color: black;
-}
+};
     
     `
