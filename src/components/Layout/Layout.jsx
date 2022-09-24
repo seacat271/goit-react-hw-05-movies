@@ -1,3 +1,3 @@
 export const Layout = () => {
-    return <header>Hesder</header>
+    return <header>Header</header>
 }

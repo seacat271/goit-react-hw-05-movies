@@ -5,9 +5,11 @@ import { Layout } from "./Layout/Layout";
 export const App =  () => {
  
   return (
+    <div>
 <Routes>
   <Route path="/" element={<Layout/>}></Route>
 </Routes>
+</div>
   );
 };
 
