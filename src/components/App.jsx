@@ -1,18 +1,14 @@
-export const App = () => {
+import axios from "axios";
+import { Route, Routes } from "react-router-dom";
+import { Layout } from "./Layout/Layout";
+
+export const App =  () => {
+ 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+<Routes>
+  <Route path="/" element={<Layout/>}></Route>
+</Routes>
   );
 };
 
-// https://api.themoviedb.org/3/movie/550?api_key=4e997d9f74601693c84e243277b61d66
+// "https://api.themoviedb.org/3/trending/all/day?api_key=4e997d9f74601693c84e243277b61d66"
