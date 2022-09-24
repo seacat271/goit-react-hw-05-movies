@@ -1,12 +1,13 @@
-import { Link } from "react-router-dom"
+// import { Link } from "react-router-dom";
+import { Header, NavItem, Nav } from "./AppBar.styled";
 
 export const AppBar = () => {
 return (
-    <header>
-        <nav>
-            <Link to="/">Home</Link>
-            <Link to="movies">Movies</Link>
-        </nav>
-    </header>
+    <Header>
+        <Nav>
+            <NavItem to="/">Home</NavItem>
+            <NavItem to="movies">Movies</NavItem>
+        </Nav>
+    </Header>
 )
 }

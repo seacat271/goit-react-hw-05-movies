@@ -7,7 +7,10 @@ export const App =  () => {
   return (
     <div>
 <Routes>
-  <Route path="/" element={<Layout/>}></Route>
+  <Route path="/" element={<Layout/>}>
+    <Route path="home" element={<div>Home</div>}/>
+    <Route path="movies" element={<div>Movies</div>}/>
+  </Route>
 </Routes>
 </div>
   );
