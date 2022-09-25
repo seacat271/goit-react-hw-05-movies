@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const PrimaryBox = styled.div`
+padding: 20px;
+`
+
 export const Button = styled.button`
     width: 140px;
     height: 30px;
