@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Outlet, Link, useParams, useLocation } from "react-router-dom";
-import { Button, DetailsBox, TextTitle, PrimaryBox } from "./MovieDetails.styled";
+import { Link, useParams, useLocation } from "react-router-dom";
+import { DetailsBox, TextTitle, PrimaryBox } from "./MovieDetails.styled";
 
 
 export const MovieDetails = () => {
@@ -16,7 +16,8 @@ const FetchById = async params => {
 useEffect(()=>{
     FetchById(movieId).then(setMovie)
   
-}, [])
+}, [movieId])
+
 if(!movie) return null;
 const {poster_path, title, vote_average, overview, genres} = movie;
 
