@@ -10,7 +10,6 @@ const {movieId} = useParams();
 const location = useLocation();
 const FetchById = async params => {
     const response = await axios.get(`https://api.themoviedb.org/3/movie/${params}?api_key=4e997d9f74601693c84e243277b61d66`)
-    console.log(response.data)
     return response.data
 }
 useEffect(()=>{
@@ -20,7 +19,6 @@ useEffect(()=>{
 
 if(!movie) return null;
 const {poster_path, title, vote_average, overview, genres} = movie;
-
     return  (<PrimaryBox>
         <Link to={location.state.from}>Go back</Link>
         <DetailsBox>
@@ -34,8 +32,11 @@ const {poster_path, title, vote_average, overview, genres} = movie;
                 <p>{genres.map(item => item.name).join(",")}</p>
             </div>
         </DetailsBox>
+        <div>       
+        <h2>Additional information</h2>
         <Link to="cast">Cast</Link>
-        <Link to="reviews">Reviews</Link>
+        <Link to="reviews">Reviews</Link></div>
+ 
         </PrimaryBox>)
     
     
