@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Outlet, Link, useParams } from "react-router-dom";
+import { Button, DetailsBox, TextTitle } from "./MovieDetails.styled";
+
 
 export const MovieDetails = () => {
 const [movie, setMovie] = useState(null)
@@ -17,18 +19,18 @@ useEffect(()=>{
 // const {poster_path, original_title, popularity, overview, genres} = movie;
 
     return  (movie && (<>
-        <button>Go back</button>
-        <div>
+        <Button>Go back</Button>
+        <DetailsBox>
             <img src={movie.poster_path} alt="movie poster" width ="200" height="300" />
             <div>
                 <h1>{movie.title}</h1>
                 <p>User score: {Math.round(movie.vote_average *10) + "%"}</p>
-                <p>Overview</p>
+                <TextTitle>Overview</TextTitle>
                 <p>{movie.overview}</p>
-                <p>Genres</p>
+                <TextTitle>Genres</TextTitle>
                 <p>{movie.genres.map(item => item.name).join(",")}</p>
             </div>
-        </div>
+        </DetailsBox>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link>
         </>))
