@@ -9,8 +9,6 @@ export const Home = () => {
 const location = useLocation()
 const requestPeriod = "day";
 const key = "trending";
-
-
 const [data] = useGetData(key, requestPeriod)
 
 if(!data) return
