@@ -1,22 +1,18 @@
-import { getData } from "helpers/getData";
-import { useEffect, useState } from "react";
+import { useGetData } from "helpers/useGetData";
 import { Link, useParams, useLocation, Outlet } from "react-router-dom";
 import { DetailsBox, TextTitle, PrimaryBox } from "./MovieDetails.styled";
 
 
 export const MovieDetails = () => {
-const [movie, setMovie] = useState(null)
+
 const {movieId} = useParams();
 const location = useLocation();
 const key = null;
+const [data] = useGetData(key, movieId)
 
-useEffect(()=>{
-    getData(key, movieId).then(setMovie)
-  
-}, [movieId])
 
-if(!movie) return;
-const {poster_path, title, vote_average, overview, genres} = movie;
+if(!data) return;
+const {poster_path, title, vote_average, overview, genres} = data;
 
     return  (<PrimaryBox>
         <Link to={location.state?.from ? location.state.from : "/movies"}>Go back</Link>

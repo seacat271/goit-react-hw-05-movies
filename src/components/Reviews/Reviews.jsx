@@ -1,22 +1,16 @@
-import { getData } from "helpers/getData";
-import { useEffect, useState } from "react";
+import { useGetData } from "helpers/useGetData";
 import { useOutletContext } from "react-router-dom";
 
 
 
 export const Reviews = () => {
-    const [reviews, setReviews] = useState(null)
+
     const movieId = useOutletContext()
     const key = "reviews";
+    const [data] = useGetData(key, movieId)
 
-
-
-    useEffect(()=>{
-        getData(key, movieId).then(setReviews)
-      
-    }, [movieId])
-    if (!reviews) return null;
-    const {results} = reviews;
+    if (!data) return null;
+    const {results} = data;
     if (results.length === 0) return <h1>We don't have any reviews for this movie.</h1>
     
     return (
