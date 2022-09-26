@@ -4,10 +4,6 @@ import { MovieLink } from "./Movies.styled";
 import axios from "axios";
 
 
-
-
-
-
 export const Movies = () => {
 const [query, setQuery] = useState("");
 const [queryList, setQueryList] = useState(null);

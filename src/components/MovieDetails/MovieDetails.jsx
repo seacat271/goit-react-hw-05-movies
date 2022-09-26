@@ -37,7 +37,7 @@ const {poster_path, title, vote_average, overview, genres} = movie;
         <h2>Additional information</h2>
         <Link to="cast" state ={{from: location.state?.from}}>Cast</Link>
         <Link to="reviews" state ={{from: location.state?.from}}>Reviews</Link></div>
-        <Outlet/>
+        <Outlet context={movieId}/>
  
         </PrimaryBox>)
     
