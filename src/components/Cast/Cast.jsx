@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import Male from "../../placeholders/placeholder-male-612x612.jpg";
 import Female from "../../placeholders/placeholder-female-612x612.jpg"
+import { Image } from "./Cast.styled";
+
 
 export const Cast = () => {
     const [cast, setCast] = useState(null)
@@ -25,7 +27,7 @@ export const Cast = () => {
         <ul>
             {actors.map(({profile_path, name, character, id, gender}) => 
                 <li key = {id}>
-                    <img 
+                    <Image 
                     src={profile_path ? "https://image.tmdb.org/t/p/w185/" + profile_path : (gender === 2 ? Male : Female)} 
                     alt={"photo" + {name}} 
                     width="100" 
