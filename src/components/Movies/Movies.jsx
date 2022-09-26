@@ -33,6 +33,7 @@ useEffect(()=>{
     if(query === "") return
   
     FetchByName(query).then(setQueryList)
+
     setSearchParams(query !== "" ? {query: query} : {})
      // eslint-disable-next-line 
 }, [query])
