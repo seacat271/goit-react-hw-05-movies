@@ -6,7 +6,7 @@ return (
     <>
     <Header>
         <Nav>
-            <NavItem to="/">Home</NavItem>
+            <NavItem to="/" end>Home</NavItem>
             <NavItem to="movies">Movies</NavItem>
         </Nav>
     </Header>

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useParams, useLocation, Outlet } from "react-router-dom";
 import { DetailsBox, TextTitle, PrimaryBox } from "./MovieDetails.styled";
 
 
@@ -20,7 +20,7 @@ useEffect(()=>{
 if(!movie) return null;
 const {poster_path, title, vote_average, overview, genres} = movie;
     return  (<PrimaryBox>
-        <Link to={location.state.from}>Go back</Link>
+        <Link to={ location.state.from}>Go back</Link>
         <DetailsBox>
             <img src={poster_path} alt="movie poster" width ="200" height="300" />
             <div>
@@ -36,6 +36,7 @@ const {poster_path, title, vote_average, overview, genres} = movie;
         <h2>Additional information</h2>
         <Link to="cast">Cast</Link>
         <Link to="reviews">Reviews</Link></div>
+        <Outlet/>
  
         </PrimaryBox>)
     
