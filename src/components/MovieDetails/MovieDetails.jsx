@@ -17,12 +17,13 @@ useEffect(()=>{
   
 }, [movieId])
 
-if(!movie) return null;
+if(!movie) return;
 const {poster_path, title, vote_average, overview, genres} = movie;
+
     return  (<PrimaryBox>
         <Link to={ location.state.from}>Go back</Link>
         <DetailsBox>
-            <img src={poster_path} alt="movie poster" width ="200" height="300" />
+            <img src={"https://image.tmdb.org/t/p/w500/" + poster_path} alt="movie poster" width ="200" height="300" />
             <div>
                 <h1>{title}</h1>
                 <p>User score: {Math.round(vote_average *10) + "%"}</p>
