@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { MovieLink } from "./Movies.styled";
-import axios from "axios";
+import { getData } from "helpers/getData";
 
 
 export const Movies = () => {
@@ -9,7 +9,7 @@ const [query, setQuery] = useState("");
 const [queryList, setQueryList] = useState(null);
 const location = useLocation();
 const [searchParams, setSearchParams] = useSearchParams();
-
+const key = "search"
 const onHandleSubmit = event => {
     event.preventDefault();
     setQuery((event.target.query.value).trim().toLowerCase())
@@ -17,18 +17,10 @@ const onHandleSubmit = event => {
    
 }
 
-const FetchByName = async params => {
-    const response = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=4e997d9f74601693c84e243277b61d66&query=${params}&language=en-US&`);
-    return response.data
-}
-
-
-
-
 useEffect(()=>{
     if(query === "") return
   
-    FetchByName(query).then(setQueryList)
+    getData(key, query).then(setQueryList)
 
     setSearchParams(query !== "" ? {query: query} : {})
      // eslint-disable-next-line 

@@ -1,22 +1,21 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import axios from "axios";
+import { getData } from "helpers/getData";
 import { TrendingMoviesLink } from "./Home.styled";
 
 export const Home = () => {
 
 const [trendingMovie, setTrendingMovie] = useState([]);
 const location = useLocation()
+const requestPeriod = "day";
+const key = "trending";
 
-const getTrendingMovie = async () => {
-    const response = await axios.get('https://api.themoviedb.org/3/trending/movie/day?api_key=4e997d9f74601693c84e243277b61d66')
-    return response.data
-}
+
 
 useEffect(()=>{
 
-getTrendingMovie().then(data => {
+    getData(key, requestPeriod).then(data => {
     setTrendingMovie(data.results)});
 
 }, [])

@@ -1,4 +1,4 @@
-import axios from "axios";
+import { getData } from "helpers/getData";
 import { useEffect, useState } from "react";
 import { Link, useParams, useLocation, Outlet } from "react-router-dom";
 import { DetailsBox, TextTitle, PrimaryBox } from "./MovieDetails.styled";
@@ -8,12 +8,10 @@ export const MovieDetails = () => {
 const [movie, setMovie] = useState(null)
 const {movieId} = useParams();
 const location = useLocation();
-const FetchById = async params => {
-    const response = await axios.get(`https://api.themoviedb.org/3/movie/${params}?api_key=4e997d9f74601693c84e243277b61d66`)
-    return response.data
-}
+const key = null;
+
 useEffect(()=>{
-    FetchById(movieId).then(setMovie)
+    getData(key, movieId).then(setMovie)
   
 }, [movieId])
 
