@@ -16,7 +16,7 @@ const [searchParams, setSearchParams] = useSearchParams();
 
 const onHandleSubmit = event => {
     event.preventDefault();
-    setQuery(event.target.query.value)
+    setQuery((event.target.query.value).trim().toLowerCase())
     event.target.reset()
    
 }
