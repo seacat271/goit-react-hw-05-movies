@@ -3,7 +3,7 @@ import {useSearchParams } from "react-router-dom";
 import { useGetData } from "helpers/useGetData";
 import { SearchForm } from "components/SearchForm/SearchForm";
 import { MovieList } from "components/MovieList/MovieList";
-
+import { Section } from "./common.styled";
 export const Movies = () => {
 const [query, setQuery] = useState("");
 const [searchParams, setSearchParams] = useSearchParams();
@@ -31,9 +31,9 @@ useEffect(()=>{
 
 
 return(
-    <>
+    <Section>
         <SearchForm onHandleSubmit ={onHandleSubmit}/>
         <MovieList data={data}/>
-    </>
+    </Section>
 )
 } 

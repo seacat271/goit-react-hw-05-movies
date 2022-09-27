@@ -3,12 +3,19 @@ import { Link } from "react-router-dom";
 
 export const MovieLink = styled(Link)`
 display: block;
+width: 270px;
 text-decoration: none;
 &:not(:last-child) {
-    margin-bottom: 15px;
+margin-bottom: 15px;
+
+
 }
 `
 
 export const MovieLinkBox = styled.ul`
-padding: 20px;
+padding: 20px 0;
+display: flex;
+gap: 40px;
+flex-wrap: wrap;
+flex-basis: calc((100% - (3 * 40 )) / 4);
 `
