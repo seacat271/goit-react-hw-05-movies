@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
-import { MovieLink } from "./Movies.styled";
+import { MovieLink } from "./SearchForm.styled";
 import { useGetData } from "helpers/useGetData";
 
 

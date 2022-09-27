@@ -6,8 +6,7 @@ export const Layout = () => {
 
 
     return <>
-    <AppBar/>
-    <Outlet/>
-
+        <AppBar/>
+        <Outlet/>
     </>
 }

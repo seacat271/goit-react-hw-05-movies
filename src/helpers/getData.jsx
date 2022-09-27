@@ -28,8 +28,12 @@ export const getData = async (key, params) => {
        
     }
 }
-    const response = await axios.get(queryParams(), requestConfig)
+try {
+    const response = await axios.get(queryParams(), requestConfig);
     return response.data
+} catch(error) { return error.message}
+   
+ 
 }
 
     

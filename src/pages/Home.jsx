@@ -2,8 +2,9 @@
 import { useLocation } from "react-router-dom";
 import { useGetData } from "helpers/useGetData";
 
-import { TrendingMoviesLink } from "./Home.styled";
 
+import { Title } from "components/Title/Title";
+import { TrendingList } from "components/TrendingList/TrendingList";
 export const Home = () => {
 
 const location = useLocation()
@@ -13,13 +14,10 @@ const [data] = useGetData(key, requestPeriod)
 
 if(!data) return
 const {results} = data;
-
+console.log(results)
     return(
     <>
-    <h1>Trending movie</h1>
-        {results.map(({title, id}) => {
-return (<TrendingMoviesLink key = {id} to={`movies/${id}`} state ={{from: location}}>{title}</TrendingMoviesLink>)
-        })}
-
+        <Title text ={"Trending movie"}/>
+        <TrendingList location ={location} data={results}/>
     </>)
 } 
