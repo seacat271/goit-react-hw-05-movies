@@ -1,6 +1,6 @@
-
+import { TextTitle } from "./Title.styled"
 
 export const Title = ({text}) => {
-    return ( <h1>{text}</h1>)
+    return ( <TextTitle>{text}</TextTitle>)
 }
 
