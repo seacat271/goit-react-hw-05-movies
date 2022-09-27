@@ -1,10 +1,11 @@
+import { Input, SearchButton, Form} from "./SearchForm.styled"
 export const SearchForm = ({onHandleSubmit}) => {
     return(
         <>
-        <form onSubmit={onHandleSubmit}>
-            <input name="query" autoComplete="off"/>
-            <button type="submit">Search</button>
-        </form>
+        <Form onSubmit={onHandleSubmit}>
+            <Input name="query" autoComplete="off"/>
+            <SearchButton type="submit">Search</SearchButton>
+        </Form>
    
         </>
     )
