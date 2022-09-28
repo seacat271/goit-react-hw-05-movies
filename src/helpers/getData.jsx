@@ -31,7 +31,7 @@ export const getData = async (key, params) => {
 try {
     const response = await axios.get(queryParams(), requestConfig);
     return response.data
-} catch(error) { return error.message}
+} catch(error) { throw error.message}
    
  
 }

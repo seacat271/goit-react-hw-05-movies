@@ -18,17 +18,13 @@ const onHandleSubmit = event => {
 
 useEffect(()=>{
     if(query === "") return
-   
     setSearchParams(query !== "" ? {query: query} : {})
      // eslint-disable-next-line 
 }, [query])
 
 useEffect(()=>{
-
     searchParams.get("query") && setQuery(searchParams.get("query"))
-
 },[searchParams])
-
 
 return(
     <Section>

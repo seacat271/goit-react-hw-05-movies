@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy} from "react";
 import Layout from "../pages/Layout";
 
 
@@ -14,7 +14,6 @@ export const App =  () => {
     <div>
 <Routes>
   <Route path="/" element={<Layout/>}>
-    <Suspense>
       <Route index element={<Home/>}/>
       <Route path="movies" element={<Movies/>}/>
       <Route path="movies/:movieId" element={<MovieDetails/>}>
@@ -22,7 +21,6 @@ export const App =  () => {
         <Route path="reviews" element={<Reviews/>}/>
       </Route>
       <Route path="*" element={<Navigate to="/"/>}></Route>
-    </Suspense>
   </Route>
 </Routes>
 </div>

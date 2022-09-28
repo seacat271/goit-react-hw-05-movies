@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import {Button} from "./GoBackButton.styled"
 export const GoBackButton = ({pathButton}) => {
-    return <Link to={pathButton}>Go back</Link>
+    return <Button to={pathButton}>Go back</Button>
 } 

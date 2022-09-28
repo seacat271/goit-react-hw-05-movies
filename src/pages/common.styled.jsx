@@ -6,4 +6,5 @@ export const Section = styled.section`
     margin-right: auto;
     padding: 20px 15px;
  background-color: white;
+ box-shadow: 0px 0px 3px 3px black;
 `
