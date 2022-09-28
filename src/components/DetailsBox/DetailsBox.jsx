@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 
 export const DetailsBox = ({data, state}) => {
     const {poster_path, title, vote_average, overview, genres} = data;
-
     return (
     <SecondaryBox>
         <img src={"https://image.tmdb.org/t/p/w500/" + (poster_path ? poster_path : Placeholder)} alt="movie poster" width ="400" height="600" />
@@ -17,7 +16,7 @@ export const DetailsBox = ({data, state}) => {
             <TextTitle>Overview</TextTitle>
             <p style={{marginBottom: "20px",}}>{overview}</p>
             <TextTitle>Genres</TextTitle>
-            <p> {genres.map(item => item.name).join(",")}</p>
+            <p> {genres.map(item => item.name).join(", ")}</p>
         </ThumbBox>
         <AdditionalBox>       
         <h2 style={{marginBottom: "20px",}}>Additional information</h2>
@@ -29,12 +28,14 @@ export const DetailsBox = ({data, state}) => {
 }
 
 DetailsBox.propTypes = {
-    state: PropTypes.string.isRequired,
+    state: PropTypes.object.isRequired,
     data: PropTypes.shape({
         vote_average: PropTypes.number.isRequired,
         poster_path: PropTypes.string.isRequired,
         title: PropTypes.string.isRequired,
         overview: PropTypes.string.isRequired,
-        genres: PropTypes.string.isRequired,
+        genres: PropTypes.arrayOf(PropTypes.shape({
+            name: PropTypes.string.isRequired,
+        })).isRequired,
     })
 }

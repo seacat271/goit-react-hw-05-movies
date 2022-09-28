@@ -10,7 +10,6 @@ const location = useLocation();
 const key = null;
 const [data] = useGetData(key, movieId)
 const pathButton = location.state?.from ? location.state.from : "/movies";
-
 if(!data) return;
     return  (
         <PrimaryBox>

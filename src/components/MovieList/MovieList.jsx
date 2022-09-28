@@ -14,7 +14,15 @@ const pathVar = location.pathname === "/" ? "/movies/" : "";
         return <ShadowBox key = {id}><MovieLink 
         to={`${pathVar}${id}`} 
         state ={{from: location}}>
-            <Image src = {"https://image.tmdb.org/t/p/w500/" + (poster_path ? poster_path : Placeholder)} alt="movie poster" width="270" height="405"/>
+            <Image 
+            src = {"https://image.tmdb.org/t/p/w500/" + (poster_path ? poster_path : Placeholder)} 
+            alt="movie poster" 
+            width="270" 
+            height="405" 
+            onError={({ currentTarget }) => {
+        currentTarget.onerror = null;
+        currentTarget.src=Placeholder;
+  }}/>
             <Thumb><span>{title}</span><span>{year}</span></Thumb></MovieLink></ShadowBox>}
         )}
     </MovieLinkBox>
@@ -25,9 +33,9 @@ MovieList.propTypes = {
     data: PropTypes.shape({
         results: PropTypes.arrayOf( PropTypes.shape({
             id: PropTypes.number.isRequired,
-            poster_path: PropTypes.string.isRequired,
+            poster_path: PropTypes.string,
             title: PropTypes.string.isRequired,
-            release_date: PropTypes.string.isRequired,
+            release_date: PropTypes.string,
         }).isRequired
         ).isRequired
     })

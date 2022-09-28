@@ -5,5 +5,5 @@ export const GoBackButton = ({pathButton}) => {
 } 
 
 GoBackButton.propTypes = {
-    pathButton: PropTypes.string.isRequired,
+    pathButton: PropTypes.object.isRequired,
 }
