@@ -5,10 +5,10 @@ export const MovieLink = styled(Link)`
 display: block;
 width: 270px;
 text-decoration: none;
+color: black;
+font-weight: 500;
 &:not(:last-child) {
 margin-bottom: 15px;
-
-
 }
 `
 

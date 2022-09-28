@@ -5,5 +5,5 @@ export const Section = styled.section`
     margin-left: auto;
     margin-right: auto;
     padding: 20px 15px;
- 
+ background-color: white;
 `

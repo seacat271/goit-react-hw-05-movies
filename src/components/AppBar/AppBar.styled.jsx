@@ -21,7 +21,7 @@ padding: 10px;
 font-weight: 500;
 font-size: 20px;
 
-    margin-left: 30px;
+margin-left: 30px;
 
 
 

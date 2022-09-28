@@ -14,7 +14,7 @@ const pathVar = location.pathname === "/" ? "/movies/" : "";
         to={`${pathVar}${id}`} 
         state ={{from: location}}
         >
-            <img src = {"https://image.tmdb.org/t/p/w500/" + (poster_path ? poster_path : Placeholder)} alt="movie poster" width="270"/>
+            <img src = {"https://image.tmdb.org/t/p/w500/" + (poster_path ? poster_path : Placeholder)} alt="movie poster" width="270" height="405"/>
             {title}</MovieLink>
         )}
     </MovieLinkBox>)
