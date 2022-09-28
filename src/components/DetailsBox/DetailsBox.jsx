@@ -1,7 +1,6 @@
 import Placeholder from "../../placeholders/placeholder_for_movie.jpg"
 import { TextTitle } from "components/MovieDetails/MovieDetails.styled"
 export const DetailsBox = ({data}) => {
-    console.log(data)
     const {poster_path, title, vote_average, overview, genres} = data;
 
     return (

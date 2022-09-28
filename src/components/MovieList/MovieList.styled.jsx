@@ -19,3 +19,10 @@ gap: 40px;
 flex-wrap: wrap;
 flex-basis: calc((100% - (3 * 40 )) / 4);
 `
+
+export const Image = styled.img`
+display: block;
+`
+
+export const TextName = styled.span`
+`

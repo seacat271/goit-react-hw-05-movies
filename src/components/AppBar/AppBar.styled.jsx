@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 
 export const Header = styled.header`
 padding: 10px;
-background-color: #000;
+background-color: black;
+color: black;
 width: 1200px;
     margin-left: auto;
     margin-right: auto;
@@ -12,7 +13,7 @@ width: 1200px;
 `
 
 export const Nav = styled.nav`
-background-color: #fff;`
+background-color: white;`
 
 export const NavItem = styled(NavLink)`
 display: inline-block;
@@ -20,7 +21,7 @@ text-align: center;
 padding: 10px;
 font-weight: 500;
 font-size: 20px;
-
+color: black;
 margin-left: 30px;
 
 

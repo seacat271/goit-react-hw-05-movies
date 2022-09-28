@@ -4,7 +4,7 @@ import { useGetData } from "helpers/useGetData";
 import { SearchForm } from "components/SearchForm/SearchForm";
 import { MovieList } from "components/MovieList/MovieList";
 import { Section } from "./common.styled";
-export const Movies = () => {
+const Movies = () => {
 const [query, setQuery] = useState("");
 const [searchParams, setSearchParams] = useSearchParams();
 const key = "search"
@@ -37,3 +37,5 @@ return(
     </Section>
 )
 } 
+
+export default Movies;
