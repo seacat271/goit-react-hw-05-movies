@@ -14,11 +14,9 @@ height: 100%;
 margin-bottom: 15px;
 }
 `
-
 export const ShadowBox = styled.li`
 box-shadow: 3px 3px 3px black;
 `
-
 export const MovieLinkBox = styled.ul`
 padding: 20px 0;
 display: flex;
@@ -26,11 +24,9 @@ gap: 40px;
 flex-wrap: wrap;
 flex-basis: calc((100% - (3 * 40 )) / 4);
 `
-
 export const Image = styled.img`
 display: block;
 `
-
 export const Thumb = styled.div`
 padding: 10px;
 display: flex;

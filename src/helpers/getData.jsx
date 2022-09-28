@@ -2,7 +2,6 @@ import axios from "axios";
 
 const API_KEY = "4e997d9f74601693c84e243277b61d66";
 axios.defaults.baseURL ="https://api.themoviedb.org/3";
-
 const requestConfig = {
     params: {
         api_key: API_KEY,
@@ -11,7 +10,6 @@ const requestConfig = {
 };
 
 export const getData = async (key, params) => {
-
     function queryParams () { 
             switch (key) {
         case "trending": 
@@ -22,18 +20,15 @@ export const getData = async (key, params) => {
             return `movie/${params}/${key}`;
         case "reviews": 
             return `movie/${params}/${key}`;
-            
         default:
             return `movie/${params}`
-       
     }
 }
+
 try {
     const response = await axios.get(queryParams(), requestConfig);
     return response.data
 } catch(error) { throw error.message}
-   
- 
 }
 
     

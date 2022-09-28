@@ -2,6 +2,8 @@ import { Button } from "components/GoBackButton/GoBackButton.styled";
 import Placeholder from "../../placeholders/placeholder_for_movie.jpg"
 import { TextTitle, SecondaryBox, Thumb, ThumbBox, AdditionalBox } from "./DetailsBox.styled"
 import { Title } from "components/Title/Title";
+import PropTypes from "prop-types";
+
 export const DetailsBox = ({data, state}) => {
     const {poster_path, title, vote_average, overview, genres} = data;
 
@@ -26,3 +28,13 @@ export const DetailsBox = ({data, state}) => {
     </SecondaryBox>)
 }
 
+DetailsBox.propTypes = {
+    state: PropTypes.string.isRequired,
+    data: PropTypes.shape({
+        vote_average: PropTypes.number.isRequired,
+        poster_path: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        overview: PropTypes.string.isRequired,
+        genres: PropTypes.string.isRequired,
+    })
+}

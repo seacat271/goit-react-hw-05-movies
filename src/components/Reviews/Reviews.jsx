@@ -2,9 +2,7 @@ import { useGetData } from "helpers/useGetData";
 import { useOutletContext } from "react-router-dom";
 import { ReviewsBox } from "./Reviews.styled";
 
-
 const Reviews = () => {
-
     const movieId = useOutletContext()
     const key = "reviews";
     const [data] = useGetData(key, movieId)
@@ -22,7 +20,6 @@ const Reviews = () => {
                 </li>
             )}
         </ReviewsBox>
-
     )
 }
 

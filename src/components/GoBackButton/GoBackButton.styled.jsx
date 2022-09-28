@@ -19,7 +19,6 @@ background-color: white;
 transition: 250ms color linear, 250ms background-color linear, 250ms box-shadow linear, 50ms text-shadow linear;
 box-shadow: 3px 3px 3px black;
 text-shadow: 3px 3px 3px lightgrey;
-
 &:hover,
 &:focus {
     color: white;

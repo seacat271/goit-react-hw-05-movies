@@ -1,4 +1,5 @@
-import { Input, SearchButton, Form} from "./SearchForm.styled"
+import { Input, SearchButton, Form} from "./SearchForm.styled";
+import PropTypes from 'prop-types'
 export const SearchForm = ({onHandleSubmit}) => {
     return(
         <>
@@ -9,4 +10,8 @@ export const SearchForm = ({onHandleSubmit}) => {
    
         </>
     )
+}
+
+SearchForm.propTypes = {
+    onHandleSubmit: PropTypes.func.isRequired,
 }

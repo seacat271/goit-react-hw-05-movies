@@ -10,26 +10,18 @@ const Cast = () => {
     const movieId = useOutletContext()
     const key = "credits"
     const [data, setData] = useGetData(key, movieId)
-   
+
     let endStep = useRef(10);
- 
-    
-    
     if (!data) return null;
     const {cast} = data;
     if (cast.length === 0) return <h1>We don't have any information about actors.</h1>
- 
-  
-
-    const onHandleLoad = () => {
     
+    const onHandleLoad = () => {
         endStep.current += 10;
         setData(prev => ({...prev, endStep}))
- 
     }
 
    const visibleCast = cast.slice(0, endStep.current)
-    
     if(!visibleCast) return;
     return (
         <CastBox>
@@ -46,7 +38,7 @@ const Cast = () => {
             )}
             {cast.length >= endStep.current ? <ButtonLoadMore type="button" onClick={onHandleLoad}>Load More</ButtonLoadMore> : null}
         </CastBox>
-
     )
 }
+
 export default Cast;

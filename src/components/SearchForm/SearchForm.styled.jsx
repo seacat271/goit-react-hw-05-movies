@@ -20,7 +20,6 @@ text-shadow: 3px 3px 3px lightgrey;
     text-shadow: none;
 }
 `
-
 export const Input = styled.input`
 box-shadow: 3px 3px 3px black;
 margin-right: 20px;
@@ -38,7 +37,6 @@ transition: 250ms box-shadow linear;
     box-shadow: none;
 }
 `
-
 export const Form = styled.form`
 justify-content: center;
 display: flex;

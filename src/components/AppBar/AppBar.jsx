@@ -1,4 +1,3 @@
-
 import { Header, NavItem, Nav } from "./AppBar.styled";
 
 export const AppBar = () => {
