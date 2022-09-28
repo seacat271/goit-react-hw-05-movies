@@ -5,7 +5,7 @@ import Female from "../../placeholders/placeholder-female-612x612.jpg"
 import { Image } from "./Cast.styled";
 
 
-export const Cast = () => {
+const Cast = () => {
     const movieId = useOutletContext()
     const key = "credits"
     const [data] = useGetData(key, movieId)
@@ -33,3 +33,4 @@ export const Cast = () => {
 
     )
 }
+export default Cast;

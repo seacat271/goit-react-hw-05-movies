@@ -6,7 +6,7 @@ import { GoBackButton } from "components/GoBackButton/GoBackButton";
 import { AdditionalBox } from "components/AdditionalBox/AdditionalBox";
 import { DetailsBox } from "components/DetailsBox/DetailsBox";
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
 
 const {movieId} = useParams();
 const location = useLocation();
@@ -27,3 +27,5 @@ if(!data) return;
         </PrimaryBox>)
 
 }
+
+export default MovieDetails;

@@ -3,7 +3,7 @@ import { useOutletContext } from "react-router-dom";
 
 
 
-export const Reviews = () => {
+const Reviews = () => {
 
     const movieId = useOutletContext()
     const key = "reviews";
@@ -25,3 +25,5 @@ export const Reviews = () => {
 
     )
 }
+
+export default Reviews;

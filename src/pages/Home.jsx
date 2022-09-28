@@ -3,7 +3,7 @@ import { MovieList } from "components/MovieList/MovieList";
 import { Title } from "components/Title/Title";
 import { Section } from "./common.styled";
 
-export const Home = () => {
+const Home = () => {
 const requestPeriod = "day";
 const key = "trending";
 const [data] = useGetData(key, requestPeriod)
@@ -13,4 +13,5 @@ const [data] = useGetData(key, requestPeriod)
         <Title text ={"Trending movie"}/>
         <MovieList  data={data}/>
     </Section>)
-} 
+};
+export default Home;
